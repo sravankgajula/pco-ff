@@ -21,13 +21,26 @@
             android:title="Debug settings">
             
         <CheckBoxPreference
-                android:key="enableDebug"
-                android:title="Enable debug" />
+            android:key="enableDebug"
+            android:title="Enable debug" />
+        
         <EditTextPreference
 		   android:key="debugBaseUrl"
 		   android:title="Debug base url"
 		   android:summary="Use a base url for debugging the api"
-		   android:defaultValue=""/>
+		   android:defaultValue="http://playground.ju.dev.peytz.dk/firmafon"/>
+        
+        <EditTextPreference
+		   android:key="debugAppKey"
+		   android:title="Debug Application Key"
+		   android:summary="Application key for debugging"
+		   android:defaultValue="app"/>
+        
+        <EditTextPreference
+		   android:key="debugUserKey"
+		   android:title="Debug User Key"
+		   android:summary="User key for debugging"
+		   android:defaultValue="key"/>
         
     </PreferenceScreen>
     

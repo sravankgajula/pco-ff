@@ -49,11 +49,14 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
         
         // Setup firmafon api
         this.firmafon = new RestApi();
+        this.firmafon.setBaseUrl(this.firmafon.defaultBaseUrl);
         this.firmafon.setAppKey(preferences.getString("firmafonAppKey", ""));
         this.firmafon.setUserKey(preferences.getString("firmafonUserKey", ""));
         
         if (preferences.getBoolean("enableDebug", false)) {
         	this.firmafon.setBaseUrl(preferences.getString("debugBaseUrl", ""));
+        	this.firmafon.setAppKey(preferences.getString("debugAppKey", ""));
+            this.firmafon.setUserKey(preferences.getString("debugUserKey", ""));
         }
     	
         this.updateReceptions();
@@ -138,14 +141,15 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) 
 	{
-		if (firmafon != null) {
-			firmafon.setAppKey(sharedPreferences.getString("firmafonAppKey", ""));
-			firmafon.setUserKey(sharedPreferences.getString("firmafonUserKey", ""));
+		if (this.firmafon != null) {
+			this.firmafon.setBaseUrl(this.firmafon.defaultBaseUrl);
+			this.firmafon.setAppKey(sharedPreferences.getString("firmafonAppKey", ""));
+			this.firmafon.setUserKey(sharedPreferences.getString("firmafonUserKey", ""));
 			
 			if (sharedPreferences.getBoolean("enableDebug", false)) {
 	        	this.firmafon.setBaseUrl(sharedPreferences.getString("debugBaseUrl", ""));
-	        } else {
-	        	this.firmafon.setBaseUrl(this.firmafon.defaultBaseUrl);
+	        	this.firmafon.setAppKey(sharedPreferences.getString("debugAppKey", ""));
+	            this.firmafon.setUserKey(sharedPreferences.getString("debugUserKey", ""));
 	        }
 			
 		}
