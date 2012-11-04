@@ -27,7 +27,7 @@
 		   android:key="debugBaseUrl"
 		   android:title="Debug base url"
 		   android:summary="Use a base url for debugging the api"
-		   android:defaultValue="http://playground.ju.dev.peytz.dk/firmafon"/>
+		   android:defaultValue=""/>
         
     </PreferenceScreen>
     
