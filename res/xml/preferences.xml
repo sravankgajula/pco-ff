@@ -40,7 +40,7 @@
 		   android:key="debugUserKey"
 		   android:title="Debug User Key"
 		   android:summary="User key for debugging"
-		   android:defaultValue="key"/>
+		   android:defaultValue="user"/>
         
     </PreferenceScreen>
     
