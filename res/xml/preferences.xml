@@ -1,0 +1,34 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="first_preferencescreen">
+        
+    <EditTextPreference
+	   android:key="firmafonAppKey"
+	   android:title="Application Key"
+	   android:inputType="textPassword"
+	   android:summary="Firmafon application key"
+	   android:defaultValue=""/>
+    
+    <EditTextPreference
+	   android:key="firmafonUserKey"
+	   android:title="User Key"
+	   android:inputType="textPassword"
+	   android:summary="Firmafon user key"
+	   android:defaultValue=""/>
+    
+    <PreferenceScreen
+            android:key="second_preferencescreen"
+            android:title="Debug settings">
+            
+        <CheckBoxPreference
+                android:key="enableDebug"
+                android:title="Enable debug" />
+        <EditTextPreference
+		   android:key="debugBaseUrl"
+		   android:title="Debug base url"
+		   android:summary="Use a base url for debugging the api"
+		   android:defaultValue="http://playground.ju.dev.peytz.dk/firmafon"/>
+        
+    </PreferenceScreen>
+    
+</PreferenceScreen>
